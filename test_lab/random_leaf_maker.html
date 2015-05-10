@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="/javascripts/application.js" type="text/javascript" src="jquery.js"></script>
+	<script>
+	function random_leaf(total_leaves){
+		var random_x_coordinates, random_y_coordinates;
+		var leaf_string = "";
+		for(var leaf=0; leaf<total_leaves; leaf++){
+			random_x_coordinates = Math.floor((Math.random() * 100) + 1);
+			random_y_coordinates = Math.floor((Math.random() * 100) + 1);
+			if(random_y_coordinates > 90){
+				random_y_coordinates = random_y_coordinates-15;
+			}
+			if(random_x_coordinates > 90){
+				random_x_coordinates = random_x_coordinates-5;
+			}
+			leaf_string += '<div style="height:10px; width:10px; border-radius:999px; border:solid 4px #5BFF79;top:' + random_y_coordinates + '%;left:' + random_x_coordinates + '%;position:absolute;"></div>';	
+		}
+		return leaf_string;
+	}
+	
+	</script>
+</head>
+<body>
+<div id="container" style="height:250px; width:500px; position:absolute;  ">
+	
+	<script>document.write(random_leaf(200));</script>
+</div> 
+</body>
+</html>

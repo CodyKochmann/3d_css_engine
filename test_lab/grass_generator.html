@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery.js"></script>
+<script>
+
+var render_grass = function(){
+	var rendered_grass = '<div style="height:100%; width:100%; top:0; left:0; margin:0;position:relative;">';
+	var grass_shades = ['#5CAD5C','#297A29','#339933'];
+	var each_color_gets = 256;
+	var random_y_coordinates, random_x_coordinates;
+	var dot_size = 3;
+	for(var blades=0; blades<grass_shades.length; blades++){
+		for (var color_count = 0; color_count<each_color_gets; color_count++){
+			random_x_coordinates = Math.floor((Math.random() * 94) + 1);
+			random_y_coordinates = Math.floor((Math.random() * 94) + 1);
+			rendered_grass += '<span style="height:' + dot_size + 'px;width:' + dot_size*1.5 + 'px;opacity:0.2;background-color:'+ grass_shades[blades] +';position:absolute;top:'+random_y_coordinates+'px;left:'+random_x_coordinates+'px;"> </span>';
+		}
+	}
+	rendered_grass += '</div>';
+	return(rendered_grass);
+}
+render_grass();
+</script>
+	<title></title>
+</head>
+<body>
+
+<div style="height:100px;width:100px;top:0;left:0;margin:0;background-color:#0EF500;">
+<script>document.write(render_grass());</script>
+</div>
+
+</body>
+</html>

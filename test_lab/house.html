@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+   <title>practice</title>
+   <link rel="stylesheet" type="text/css" href="cube.css" />
+</style>
+<style>
+body{background-color:#000;}
+.scene{position:absolute;height:98%;width:98%;}
+.cube{transition-property:0;transition-duration:1s;-webkit-backface-visibility:hidden;}
+#scene{position:absolute;top:400px;left:500px;height:98%;width:98%;-webkit-perspective:500px;perspective:500px;}
+#perspective{-webkit-transform:rotateX(30deg);}
+/*#best_buy{transition-property:0;transition-duration:1s;-webkit-transform-style:preserve-3d;-webkit-transform:scaleX(5) scaleY(1) scaleZ(3);top:0;background-color: white;opacity:0.75;margin:15% 45%;} */
+</style>
+<script type="text/javascript" src="jquery.js"></script>       
+</head>
+
+
+<body>
+	<div class="scene" id="scene">
+			<div  id="rotate_container" class="cube">
+				<div class="face ground" style="position:absolute;top:0;left:0;height:100px;width:100px;background-color:brown;"></div>
+				<div class="face" style="position:absolute;top:50px;left:5px;height:50px;width:90px;-webkit-transform:rotateY(90deg) translateZ(40px);background-color:tan;">
+					<div style="position:absolute;background-color:grey;top:5px;left:5px;height:45px;width:80px;">
+						<div style="left:0;margin-top:10px;width:100%;height:1px;background-color:black;"></div>
+						<div style="left:0;margin-top:10px;width:100%;height:1px;background-color:black;"></div>
+						<div style="left:0;margin-top:10px;width:100%;height:1px;background-color:black;"></div>
+					</div>
+				</div>
+				<div class="face" style="position:absolute;top:0px;left:5px;height:50px;width:90px;-webkit-transform:rotateY(90deg)translateZ(25px);background-color:tan;">
+					<div style="position:absolute;height:40%;width:30%;background-color:grey;top:25%; left:15px;">
+						<div style="height:50%;width:100%;top:0;left:0;border-bottom:1px solid black; position:absolute;"></div>
+						<div style="height:100%;width:50%;top:0;left:0;border-right:1px solid black; position:absolute;"></div>
+					</div>
+					<div style="position:absolute;height:40%;width:30%;background-color:grey;top:25%; right:15px;">
+						<div style="height:50%;width:100%;top:0;left:0;border-bottom:1px solid black; position:absolute;"></div>
+						<div style="height:100%;width:50%;top:0;left:0;border-right:1px solid black; position:absolute;"></div>
+					</div>
+					</div>
+				<div class="face" style="position:absolute;top:0px;left:5px;height:100px;width:90px;-webkit-transform:rotateY(90deg) translateZ(-50px);background-color:tan;"></div>
+				<div class="face" style="position:absolute;top:50px;left:0px;height:50px;width:90px;-webkit-transform: translateZ(-45px);background-color:tan;"></div>
+				<div class="face" style="position:absolute;top:50px;left:0px;height:50px;width:90px;-webkit-transform: translateZ(45px);background-color:tan;">
+					<div style="top:4px;left:48px;height:45px;border:solid 1px black; position:absolute;background-color:grey;width:20px;">
+						<div style='height:2px; width:2px; position:absolute;top:25px;left:16px;background-color:black;'></div>
+					</div>
+				</div>
+				<div class="face" style="position:absolute;top:0px;left:0px;height:50px;width:75px;-webkit-transform: translateZ(-45px);background-color:tan;">
+					<div style="position:absolute;height:20%;width:20%;background-color:grey;top:25%; left:16%;"></div>
+					<div style="position:absolute;height:20%;width:20%;background-color:grey;top:25%; right:16%;"></div>
+				</div>
+				<div class="face" style="position:absolute;top:0px;left:0px;height:50px;width:75px;-webkit-transform: translateZ(45px);background-color:tan;">
+					<div style="position:absolute;height:20%;width:20%;background-color:grey;top:25%; left:16%;">
+					</div>
+					<div style="position:absolute;height:20%;width:20%;background-color:grey;top:25%; right:16%;"></div>
+				</div>
+				<div class="face" style="position:absolute;top:0px;left:0px;height:100px;width:55px;-webkit-transform: rotateX(90deg) translateZ(55px) translateX(35px) rotateY(15deg);background-color:brown;"></div>
+				<div class="face" style="position:absolute;top:0px;left:0px;height:100px;width:55px;-webkit-transform: rotateX(90deg) translateZ(55px) translateX(-15px) rotateY(-15deg);background-color:brown;"></div>
+				<div class="face" style="position:absolute;top:5px;left:0px;height:90px;width:45px;-webkit-transform: rotateX(90deg) translateX(45px) rotateY(0deg);background-color:brown;"></div>
+				
+			</div>
+		
+	</div>
+	
+	
+	<script>
+		var rotator = 0;
+		function rotate(){
+			rotator += 80;
+           $("#rotate_container").css('-webkit-transform', ' translateY(150px) rotateX(-20deg) rotateZ(0deg) rotateY(' + rotator.toString() + 'deg)  ');
+           }
+           setInterval(function(){rotate();}, 1000);
+	</script>
+</body>
+</html>
+
+

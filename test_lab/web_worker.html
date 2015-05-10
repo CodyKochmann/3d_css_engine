@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+	var worker = new Worker('web_worker.js');
+
+	// how we will handle the worker's output
+	worker.addEventListener('message', function(e) {
+	   document.write(e.data);
+	   document.write(e.data);
+	}, false);
+
+	worker.postMessage({ username: 'brunoscopelliti' }); // Send data to our worker.
+
+</script>
+</body>
+</html>

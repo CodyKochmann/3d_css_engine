@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+   <access origin="*" />
+   <title>Iggy's World</title>
+   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+   <meta name="viewport" content="width=device-width" />
+   <link rel="stylesheet" type="text/css" href="css/cube.css" />
+   <link rel="stylesheet" type="text/css" href="css/main_stylesheet.css" />
+   <script src="js/building_database.js" type="text/javascript"></script>
+   <script src="js/building_generator.js" type="text/javascript"></script>
+   <script src="js/jquery_src.js" type="text/javascript"></script>
+   <script src="js/menu.js"></script>
+</head>
+<body onmousedown="return false;" style="max-width:100%;max-height:100%;position: fixed;top: 0;left: 0;">
+	<div class="scene" style="position:fixed;">
+		<div id="store_container">
+			<div id="ground" class="ground">
+				<div id="grid">
+					<script type="text/javascript">
+						for(var i =0;i<=400;i++){
+							document.write("<div id='tile_" + (i+1) + "' class='tile' onclick='tile_click("+ (i+1) +")'></div>");
+						}
+					</script>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="add_button" onclick="build_menu_button();">Build</div>
+	<div class="add_button" onclick="house_build_button(this);"><p style="position:absolute;font-size:16px;top:10%;width:100%;text-align:center;left:0;">House</p></div>
+	
+	
+	<div class="add_button" onclick="tower_build_button(this);"><p style="position:absolute;font-size:16px;top:10%;width:100%;text-align:center;left:0;">Tower</p></div>
+	<div class="add_button" onclick="road_build_button(this)"><p style="position:absolute;font-size:16px;top:10%;width:100%;text-align:center;left:0;">Road</p></div>
+	<div class="add_button" onclick="forest()"><p style="position:absolute;font-size:16px;top:10%;width:100%;text-align:center;left:0;">Forest</p></div>
+
+	<div class="build_submenu" onclick='house_build_menu(this, "small_house_two")'><p style="position:absolute;font-size:14px;top:-10px;width:100%;text-align:center;left:0;">small house</p></div>
+	<div class="build_submenu" onclick='house_build_menu(this, "small_house")'><p style="position:absolute;font-size:14px;top:-10px;width:100%;text-align:center;left:0;">medium house</p></div>
+   <script src="js/store.js" type="text/javascript"></script>
+   <script src="test_lab/test_lab.js" type="text/javascript"></script>
+   <script>
+   /*$( document ).ready(function() {
+   		tile_toggled = true;
+   		for(var i =0;i<=400;i++){
+			requested_model = 'grass_layout';
+			tile_click(i+1);
+		}
+		tile_toggled = false;
+	},3000);*/
+	</script>
+</body>
+</html>

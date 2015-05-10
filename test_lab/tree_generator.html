@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+   <title>practice</title>
+   <link rel="stylesheet" type="text/css" href="cube.css" />
+</style>
+<style>
+body{background-color:#000;}
+.scene{position:absolute;height:98%;width:98%;}
+.cube{transition-property:0;transition-duration:1s;-webkit-backface-visibility:hidden;}
+#scene{position:absolute;top:400px;left:500px;height:98%;width:98%;-webkit-perspective:500px;perspective:500px;}
+#perspective{-webkit-transform:rotateX(30deg);}
+/*#best_buy{transition-property:0;transition-duration:1s;-webkit-transform-style:preserve-3d;-webkit-transform:scaleX(5) scaleY(1) scaleZ(3);top:0;background-color: white;opacity:0.75;margin:15% 45%;} */
+</style>
+<script type="text/javascript" src="jquery.js"></script> 
+<script>
+
+create_tree = function(tree_height){
+	random_leaf = function(total_leaves){
+		var random_x_coordinates, random_y_coordinates, leafcolor;
+		var leaf_string = "";
+		for(var leaf=0; leaf<total_leaves; leaf++){
+			random_x_coordinates = Math.floor((Math.random() * 45) + 1);
+			random_y_coordinates = Math.floor((Math.random() * 90) + 1);
+			if(random_x_coordinates % 2 == 1){
+				leaf_color = '#5BFF79';
+			} else {
+				leaf_color = '#00CC24';
+			}
+			leaf_string += '<div style="height:'+tree_height/12+'px; width:'+tree_height/12+'px; border-radius:999px; background-color:' + leaf_color + ';top:' + random_y_coordinates + '%;left:' + random_x_coordinates + '%;position:absolute; -webkit-transform:rotateX('+random_y_coordinates+'deg);"></div>';	
+		}
+		return leaf_string;
+	}
+	var random_branch_height = Math.floor((Math.random() * 3) + 10);
+	var completed_tree_string = '<div class="face ground" style="opacity:0.9;position:absolute; top:'+(100-tree_height)+'; left:0; height:'+tree_height+'px; width:3px; -webkit-transform:rotateY(90deg); background-color:brown; transform-style:-webkit-transform; -webkit-transform-style: preserve-3d;"></div><div class="face ground" style="opacity:0.9;position:absolute; top:'+(100-tree_height)+'; left:0; height:'+tree_height+'px; width:3px; -webkit-transform:rotateY(90deg) rotateY(90deg); background-color:brown; -webkit-transform-style: preserve-3d; ">';
+	var total_branches = 30;
+	for(var branches = 0; branches < total_branches; branches++){
+		var single_branch_layer = '<div style="position:absolute;top:-'+(tree_height*0.45)+';left:-'+(tree_height*0.3)+'px;height:'+tree_height*(random_branch_height/10)+'px;width:'+tree_height*0.7+'px;-webkit-transform:rotateY('+ (branches * (360/total_branches)) +'deg);">'+ random_leaf(360/total_branches) +'</div>';
+		completed_tree_string += single_branch_layer;
+	}
+	return(completed_tree_string);
+}
+</script>      
+</head>
+<body>
+	<div class="scene" id="scene">
+			<div  id="rotate_container" class="cube">
+				<div class="face ground" style="position:absolute; top:0;left:0; height:100px; width:100px ; background-color:brown;"></div>
+				
+				<script>document.write(create_tree(100));</script>
+
+			</div>
+		
+	</div>
+	<script>
+		var rotator = 0;
+		function rotate(){
+			rotator += 80;
+           $("#rotate_container").css('-webkit-transform', ' translateY(150px) rotateX(-20deg) rotateZ(0deg) rotateY(' + rotator.toString() + 'deg)  ');
+           }
+           setInterval(function(){rotate();}, 1000);
+	</script>
+</body>
+</html>

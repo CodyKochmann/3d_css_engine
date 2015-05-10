@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+   <title>practice</title>
+   <link rel="stylesheet" type="text/css" href="cube.css" />
+</style>
+<style>
+body{background-color:#000;}
+.scene{position:absolute;height:98%;width:98%;}
+.cube{transition-property:0;transition-duration:1s;-webkit-backface-visibility:hidden;}
+#scene{position:absolute;top:400px;left:500px;height:98%;width:98%;-webkit-perspective:500px;perspective:500px;}
+#perspective{-webkit-transform:rotateX(-30deg);}
+/*#best_buy{transition-property:0;transition-duration:1s;-webkit-transform-style:preserve-3d;-webkit-transform:scaleX(5) scaleY(1) scaleZ(3);top:0;background-color: white;opacity:0.75;margin:15% 45%;} */
+</style>
+<script type="text/javascript" src="jquery.js"></script>       
+</head>
+
+
+<body>
+	<div class="scene" id="scene">
+			<div  id="rotate_container" class="cube">
+				<div class="face ground" style="position:absolute;top:0;left:0;height:100px;width:100px;background-color:brown;"></div>
+				<div class="face ground" style="position:absolute;top:0;left:0;height:100px;width:100px;-webkit-transform:rotateY(90deg);background-color:red;"></div>
+			</div>
+	</div>
+	
+	
+	<script>
+		var rotator = 0;
+		function rotate(){
+			rotator += 80;
+           $("#rotate_container").css('-webkit-transform', ' translateY(150px) rotateX(-20deg) rotateZ(0deg) rotateY(' + rotator.toString() + 'deg)  ');
+           }
+           setInterval(function(){rotate();}, 1000);
+	</script>
+</body>
+</html>
+
+

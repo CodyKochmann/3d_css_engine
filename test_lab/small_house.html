@@ -1,0 +1,145 @@
+<html lang="en">
+<head>
+   <title>practice</title>
+   <link rel="stylesheet" type="text/css" href="cube.css" />
+</style>
+<style>
+body{background-color:#000;}
+.scene{position:absolute;height:98%;width:98%;}
+.cube{transition-property:0;transition-duration:1s;-webkit-backface-visibility:hidden;}
+#scene{position:absolute;top:100px;left:200px;height:98%;width:98%;-webkit-perspective:500px;perspective:500px;}
+#perspective{-webkit-transform:rotateX(30deg);}
+/*#best_buy{transition-property:0;transition-duration:1s;-webkit-transform-style:preserve-3d;-webkit-transform:scaleX(5) scaleY(1) scaleZ(3);top:0;background-color: white;opacity:0.75;margin:15% 45%;} */
+</style>
+<script type="text/javascript" src="jquery.js"></script>      
+<script type="text/javascript">
+var line_multiplier = function(line,times){
+	var output = "";
+	for (var i=0; i<times; i++){
+	output += line;}
+	return output;
+	}
+var small_house_tile ='<div style="position:relative;top:0;height:2px;width:4px;border-bottom:1px solid black;border-right:1px black solid;float:left;opacity:0.5;"></div>';
+var small_house_garage_door ='<div style="position:relative;top:0;height:4px;width:100%; border-bottom:1px solid black;opacity:0.5;"></div>';
+//var tester = line_multiplier("hello",50) + "hi";
+</script> 
+</head>
+
+
+<body>
+	<div class="scene" id="scene">
+			<div  id="rotate_container" class="cube">
+				<div class="face ground" style="position:absolute;top:0;left:0;height:100px;width:100px;background-color:darkgreen;"></div>
+				<!-- back wall -->
+				<div class="face ground" style="position:absolute;top:50px;left:40px;height:50px;width:80px;-webkit-transform:rotateY(90deg) translateZ(10px);background-color:#C16400;">
+					<div style="position:absolute; top:3px;left:13px; height:12px; width:22px; background-color:tan;">
+						<div style="position:relative;margin:1px;height:10px;width:90%;background-color:skyblue;float:left;">
+							<div style="height:45%;width:100%;position:absolute;border-bottom: solid black 1px;"></div>
+							<div style="height:100%;width:33%;position:absolute;border-right: solid black 1px;"></div>
+							<div style="height:100%;width:66%;position:absolute;border-right: solid black 1px;"></div>
+						</div>
+					</div>
+					<div style="position:absolute; top:3px;right:13px; height:12px; width:22px; background-color:tan;">
+						<div style="position:relative;margin:1px;height:10px;width:90%;background-color:skyblue;float:left;">
+							<div style="height:45%;width:100%;position:absolute;border-bottom: solid black 1px;"></div>
+							<div style="height:100%;width:33%;position:absolute;border-right: solid black 1px;"></div>
+							<div style="height:100%;width:66%;position:absolute;border-right: solid black 1px;"></div>
+						</div>
+					</div>
+					<div style="position:absolute; bottom:1px;left:24px; border-right:grey 1px solid; border-left:grey 1px solid; border-top:grey 1px solid; height:20px; width:10px; background-color:skyblue;"></div>
+					<div style="position:absolute; bottom:1px;left:46px; border-right:grey 1px solid; border-top:grey 1px solid; height:20px; width:10px; background-color:skyblue;"></div>
+					<div style="position:absolute; bottom:1px;left:35px; border-left:grey 1px solid; height:20px; width:10px; border-top:grey 1px solid; border-right:grey 1px solid; background-color:skyblue;"></div>
+				</div>
+				<!-- front wall -->
+				<div class="face ground" style="position:absolute;top:60px;left:10px;height:30px;width:40px;-webkit-transform:rotateY(90deg) translateX(-15px) rotateX(-85deg);background-color:grey;">
+					<script>document.write(line_multiplier(small_house_tile,88));</script>
+				</div>
+
+				<div class="face ground" style="position:absolute;top:75px;left:20px;height:25px;width:3px;-webkit-transform:rotateY(90deg) translateX(-30px);background-color:brown;"></div>
+				<div class="face ground" style="position:absolute;top:75px;left:20px;height:25px;width:3px;-webkit-transform:rotateY(0deg) translateZ(30px);background-color:brown;"></div>
+				
+
+				<div class="face ground" style="position:absolute;top:50px;left:-5px;height:50px;width:80px;-webkit-transform:rotateY(90deg) translateZ(10px);background-color:#C16400;">
+					<div style="position:absolute; bottom:0;left:22px; height:20px; width:8px; background-color:brown;">
+						<div style="top:50%;left:70%;position:absolute;background-color:black;border-radius:999px;height:2px;width:2px;"></div>
+					</div>
+					<div style="position:absolute; top:3px;left:10px; height:12px; width:24px; background-color:tan;">
+						<div style="position:relative;margin:1px;height:10px;width:10px;background-color:skyblue;float:left;">
+							<div style="height:45%;width:100%;position:absolute;border-bottom: solid black 1px;"></div>
+							<div style="height:100%;width:45%;position:absolute;border-right: solid black 1px;"></div>
+						</div>
+						<div style="position:relative;margin:1px;height:10px;width:10px;background-color:skyblue;float:left;">
+							<div style="height:45%;width:100%;position:absolute;border-bottom: solid black 1px;"></div>
+							<div style="height:100%;width:45%;position:absolute;border-right: solid black 1px;"></div>
+						</div>
+					</div>
+				</div>
+				<!-- garage walls -->
+				<div class="face ground" style="position:absolute;top:50px;left:-17.5px;height:50px;width:35px;-webkit-transform:rotateY(90deg) translateZ(10px) translateX(22.5px);background-color:#C16400;">
+					<div style="height:24px; width:25px; position:absolute; background-color:grey; margin:0; bottom:0; left:5px;">
+						<script>document.write(line_multiplier(small_house_garage_door,4));</script>
+					</div>
+					<div style="position:absolute;top:-12px;left:2px;width: 0px;height: 0px;border-style: solid;border-width: 0 17px 12px 17.5px;margin:0;border-color: transparent transparent grey transparent;"></div>
+					<div style="position:absolute; top:3px;left:10px; height:12px; width:18px; background-color:tan;">
+						<div style="position:relative;margin:1px;height:10px;width:90%;background-color:skyblue;float:left;">
+							<div style="height:45%;width:100%;position:absolute;border-bottom: solid black 1px;"></div>
+							<div style="height:100%;width:33%;position:absolute;border-right: solid black 1px;"></div>
+							<div style="height:100%;width:66%;position:absolute;border-right: solid black 1px;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="face ground" style="position:absolute;top:50px;left:10px;height:50px;width:35px;-webkit-transform:rotateY(90deg) rotateY(90deg) translateZ(5px);background-color:#C16400;"></div>
+				<div class="face ground" style="position:absolute;top:50px;left:10px;height:50px;width:35px;-webkit-transform:rotateY(90deg) rotateY(90deg) translateZ(40px);background-color:#C16400;"></div>
+
+				<!-- main walls on house sides -->
+				<div class="face ground" style="position:absolute;top:50px;left:45px;height:50px;width:45px;-webkit-transform:rotateY(90deg) rotateY(90deg) translateZ(10px)translateZ(30px);background-color:#C16400;">
+				<div style="position:absolute; top:3px;left:10px; height:12px; width:22px; background-color:tan;">
+						<div style="position:relative;margin:1px;height:10px;width:90%;background-color:skyblue;float:left;">
+							<div style="height:45%;width:100%;position:absolute;border-bottom: solid black 1px;"></div>
+							<div style="height:100%;width:33%;position:absolute;border-right: solid black 1px;"></div>
+							<div style="height:100%;width:66%;position:absolute;border-right: solid black 1px;"></div>
+						</div>
+					</div>
+					<div style="position:absolute;top:-18px;left:-1px;width: 0px;height: 0px;border-style: solid;border-width: 0 24px 17px 24px;margin:0;border-color: transparent transparent grey transparent;"></div>
+				</div>
+				<div class="face ground" style="position:absolute;top:50px;left:45px;height:50px;width:45px;-webkit-transform:rotateY(90deg) rotateY(90deg) translateZ(10px)translateZ(-50px);background-color:#C16400;">
+					<div style="position:absolute; top:3px;left:12px; height:12px; width:22px; background-color:tan;">
+						<div style="position:relative;margin:1px;height:10px;width:90%;background-color:skyblue;float:left;">
+							<div style="height:45%;width:100%;position:absolute;border-bottom: solid black 1px;"></div>
+							<div style="height:100%;width:33%;position:absolute;border-right: solid black 1px;"></div>
+							<div style="height:100%;width:66%;position:absolute;border-right: solid black 1px;"></div>
+						</div>
+					</div>
+					<div style="position:absolute;top:-18px;left:-1px;width: 0px;height: 0px;border-style: solid;border-width: 0 24px 17px 24px;margin:0;border-color: transparent transparent grey transparent;"></div>
+				</div>
+
+				<div class="face ground" style="position:absolute;top:26px;left:30px;height:30px;width:80px;-webkit-transform:rotateY(90deg) translateZ(10px) rotateX(55deg);background-color:grey;">
+					<script>document.write(line_multiplier(small_house_tile,187));</script>
+				</div>
+				<div class="face ground" style="position:absolute;top:26px;left:5px;height:30px;width:80px;-webkit-transform:rotateY(90deg) translateZ(10px) rotateX(-55deg);background-color:grey;">
+					<script>document.write(line_multiplier(small_house_tile,187));</script>
+				</div>
+
+				<div class="face ground" style="position:absolute;top:32.5px;left:5px;height:22.5px;width:63px;-webkit-transform:rotateY(90deg) rotateY(90deg) translateZ(15px) rotateX(-55deg);background-color:grey;">
+					<script>document.write(line_multiplier(small_house_tile,104));</script>
+				</div>
+				<div class="face ground" style="position:absolute;top:32.5px;left:5px;height:22.5px;width:63px;-webkit-transform:rotateY(90deg) rotateY(90deg) translateZ(32.5px) rotateX(55deg);background-color:grey;">
+					<script>document.write(line_multiplier(small_house_tile,104));</script>
+				</div>
+			</div>
+		
+	</div>
+	
+	
+	<script>
+		var rotator = 0;
+		function rotate(){
+			rotator += 80;
+           $("#rotate_container").css('-webkit-transform', ' translateY(150px) rotateX(-20deg) rotateZ(0deg) rotateY(' + rotator.toString() + 'deg)  ');
+           }
+           setInterval(function(){rotate();}, 1000);
+	</script>
+</body>
+</html>
+
+
